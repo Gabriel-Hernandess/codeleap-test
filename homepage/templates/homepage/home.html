@@ -1,0 +1,130 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Codeleap Test</title>
+
+    <link rel="stylesheet" href="{% static 'homepage/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'homepage/css/partials/header.css' %}">
+    <link rel="stylesheet" href="{% static 'homepage/css/partials/footer.css' %}">
+</head>
+<body>
+
+    {% include 'homepage/partials/header.html' %}
+
+    <main>
+        <!-- Sessão 1: Home -->
+        <section id="home" class="section-home">
+            <div class="home-content">
+                <div class="home-text">
+                    <h1>Bem-vindo ao meu projeto para o desafio técnico da Codeleap</h1>
+                    <p>Aqui, vamos gerenciar as APIs de Careers através de autenticação segura e requests.</p>
+                    <a href="#sobre" class="btn-primary">Saiba Mais</a>
+                </div>
+                <div class="home-image">
+                    <img src="{% static 'homepage/assets/images/dev-notebook.webp' %}" alt="Dev Notebook">
+                </div>
+            </div>
+        </section>
+
+        <!-- Sessão 2: Sobre Mim -->
+        <section id="sobre" class="section-about">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="{% static 'homepage/assets/images/GabrielYanagawaHernandes.jpeg' %}">
+                </div>
+                <div class="about-text">
+                    <h2>Sobre Mim</h2>
+                    <p>
+                        Sou desenvolvedor com foco em Python e Django, criando soluções escaláveis e seguras para sistemas modernos.
+                        Meu foco é me especializar em tecnologias que gosto de atuar, com projetos que eu possa contribuir através da minha proatividade e ambição.
+                        Trabalho como desenvolvedor há 3 anos, de forma simples, mas, sempre entregando o meu melhor e aprendendo com desafios do dia a dia.
+                        <br><br>
+                        Sou organizado e sigo boas práticas de desenvolvimento, acredito que o que falta para mim decolar ainda mais na minha carreira, é um ambiente 
+                        onde eu tenha desafios que me tirem da zona de conforto e me possibilitem crescer através de trabalho em equipe e boas conexões pessoais.
+                    </p>
+                    <a href="#projeto" class="btn-secondary">Meu projeto</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sessão 3: Projeto -->
+        <section id="projeto" class="section-project">
+            <h2 class="section-title">Projeto</h2>
+            <p class="section-subtitle">Confira alguns destaques do meu trabalho</p>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-icon">💻</div>
+                    <h3>Autenticação</h3>
+                    <p>Desenvolvi um sistema de autenticação para o projeto, onde usei JWT com Cookies para validação de usuário e segurança das rotas de APIs.</p>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">🛠️</div>
+                    <h3>Careers</h3>
+                    <p>Utilizei o sistema de requests para chamadas de API e serializers para tratamento dos dados, implementei validação de permissão através do method solicitado e token de acesso via Cookies com IsAuthenticated do JWT.</p>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">📱</div>
+                    <h3>Deploy</h3>
+                    <p>Fiz o push do projeto no Github e o hospedei no Render, para facilidade de uso e breve apresentação.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sessão 4: APIs -->
+        <section id="apis" class="section-apis">
+            <h2 class="section-title">APIs</h2>
+            <p class="section-subtitle">Descrição das APIs disponíveis no sistema</p>
+            <div class="api-category">
+                <h3>Autenticação</h3>
+                <ul>
+                    <li><b>POST /api/auth/register/</b> - Criar novo usuário</li>
+                    <li><b>POST /api/auth/token/</b> - Obter tokens JWT</li>
+                    <li><b>POST /api/auth/token/refresh/</b> - Atualizar token</li>
+                    <li><b>POST /api/auth/authenticated/</b> - Verificar usuario autenticado</li>
+                    <li><b>POST /api/auth/logout/</b> - Logout do usuário</li>
+                </ul>
+            </div>
+            <div class="api-category">
+                <h3>Careers</h3>
+                <ul>
+                    <li><b>GET /api/careers/</b> - Listar posts</li>
+                    <li><b>POST /api/careers/</b> - Criar novo post</li>
+                    <li><b>PATCH /api/careers/{id}/</b> - Atualizar post</li>
+                    <li><b>DELETE /api/careers/{id}/</b> - Deletar post</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Sessão 5: Contato -->
+        <section id="contato" class="section-contact">
+            <div class="contact-content">
+                <div class="contact-text">
+                    <h2>Contato</h2>
+                    <p>
+                        Deixo abaixo novamente os dados para contato, espero que meu projeto tenha atendido os critérios e que possamos agendar 
+                        uma forma de contato para conversar mais e entender melhor como se encontra a Codeleap hoje, para saber como eu posso 
+                        contribuir e se der tudo certo, fazer parte do time.
+                    </p>
+                    <p><b>Gabriel Hernandes</b></p>
+                    <p>Email: gabriel.hernandess01@gmail.com</p>
+                    <p>Telefone: +55 14 99849-2004</p>
+                    <div class="social-icons">
+                        <a href="wa.me/5514998492004" target="_blank"><img src="{% static 'homepage/assets/icons/wpp.png' %}" alt="GitHub"></a>
+                        <a href="https://www.linkedin.com/in/gabriel-hernandess/" target="_blank"><img src="{% static 'homepage/assets/icons/linkedin.svg' %}" alt="LinkedIn"></a>
+                        <a href="https://github.com/Gabriel-Hernandess" target="_blank"><img src="{% static 'homepage/assets/icons/github.svg' %}" alt="GitHub"></a>
+                    </div>
+                </div>
+                <div class="contact-image">
+                    <img src="https://cdn-icons-png.flaticon.com/512/9225/9225548.png" alt="Contato">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    {% include 'homepage/partials/footer.html' %}
+
+    <script src="{% static 'homepage/js/index.js' %}"></script>
+</body>
+</html>
