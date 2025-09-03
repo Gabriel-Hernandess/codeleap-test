@@ -8,6 +8,11 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
         model = User
         fields = ['username', 'email', 'password']
 
+    def validate_email(self, value):
+        if User.objects.filter(email=value).exists():
+            raise serializers.ValidationError("Este email já está em uso.")
+        return value
+
     def create(self, validated_data):
         user = User(
             username=validated_data['username'],

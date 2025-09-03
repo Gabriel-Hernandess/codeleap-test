@@ -14,6 +14,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 DEBUG = os.getenv("DEBUG", "0") == "1"
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
 CODELEAP_API_URL = 'https://dev.codeleap.co.uk/careers/'
+AUTH_USER_MODEL = 'auth.User'
 
 
 # Application definition
