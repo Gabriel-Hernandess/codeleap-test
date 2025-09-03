@@ -37,7 +37,10 @@ class CareersView(APIView):
     def post(self, request):
         logger.info("POST /careers chamado")
         logger.debug(f"Payload recebido: {request.data}")
-        serializer = CareerCreateSerializer(data=request.data)
+
+        data = request.data.copy()
+        data["username"] = request.user.username
+        serializer = CareerCreateSerializer(data=data)
         
         if serializer.is_valid():
             headers = {"Content-Type": "application/json", "Accept": "application/json"}
