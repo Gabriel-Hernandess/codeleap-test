@@ -1,20 +1,17 @@
 from pathlib import Path
 from dotenv import load_dotenv
 from datetime import timedelta
-
-CODELEAP_API_URL = 'https://dev.codeleap.co.uk/careers/'
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-0groolvqg!9p!)fj6p9f-jl!0k$a95@ejkl#$02*1#7i1lxudi'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
+# ----- BASE CONFIG
+SECRET_KEY = os.getenv("SECRET_KEY")
+DEBUG = os.getenv("DEBUG", "0") == "1"
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "localhost").split(",")
+CODELEAP_API_URL = 'https://dev.codeleap.co.uk/careers/'
 
 
 # Application definition
